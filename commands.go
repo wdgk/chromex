@@ -48,12 +48,11 @@ func assert(err error) {
 }
 
 func doInit(c *cli.Context) {
-	fmt.Println("Init Called!!")
 	if len(c.Args()) == 0 {
 		fmt.Println("Usage:chromex init [Project Name]")
 	}
 	name := c.Args()[0]
-	//サブコマンドに指定したnameのディレクトリを生成
+	
 	err := os.Mkdir(name, 0755)
 	if err != nil {
 		log.Fatal(err)
